@@ -1,0 +1,65 @@
+[
+  {
+    "operation": "shift",
+    "spec": {
+      "data": {
+        "vessels": {
+          "pageInfo": {
+            "hasNextPage": "paging.hasNextPage",
+            "endCursor": "paging.endCursor"
+          },
+          "totalCount": {
+            "value": "paging.total",
+            "relation": "paging.relation"
+          },
+          "nodes": {
+            "*": {
+              "id": "data[&1].id",
+              "staticData": {
+                "name": "data[&2].name",
+                "mmsi": "data[&2].mmsi",
+                "imo": "data[&2].imo",
+                "callsign": "data[&2].call_sign",
+                "shipType": "data[&2].ship_type",
+                "aisClass": "data[&2].class",
+                "flag": "data[&2].flag",
+                "dimensions": {
+                  "length": "data[&3].length",
+                  "width": "data[&3].width"
+                }
+              },
+              "lastPositionUpdate": {
+                "accuracy": "data[&2].last_known_position_accuracy",
+                "collectionType": "data[&2].last_known_position_collection_type",
+                "course": "data[&2].last_known_position_course",
+                "heading": "data[&2].last_known_position_heading",
+                "latitude": "data[&2].last_known_position_coordinates",
+                "longitude": "data[&2].last_known_position_coordinates",
+                "maneuver": "data[&2].last_known_position_maneuver",
+                "navigationalStatus": "data[&2].navigationalStatus",
+                "rot": "data[&2].last_known_position_rot",
+                "speed": "data[&2].last_known_position_speed",
+                "timestamp": "data[&2].last_known_position_timestamp",
+                "updateTimestamp": "data[&2].updated_at"
+              },
+              "currentVoyage": {
+                "destination": "data[&2].most_recent_voyage_destination",
+                "draught": "data[&2].last_known_position_draught",
+                "eta": "data[&2].predicted_route_eta",
+                "matchedPort": {
+                  "matchScore": "data[&3].matchScore",
+                  "port": {
+                    "name": "data[&4].most_recent_voyage_matched_port_port_name",
+                    "unlocode": "data[&4].most_recent_voyage_matched_port_unlocode"
+                  }
+                },
+                "timestamp": "data[&2].timestamp",
+                "updateTimestamp": "data[&2].static_updated_at"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+]
