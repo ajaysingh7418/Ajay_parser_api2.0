@@ -6,52 +6,60 @@
         "data": {
           "vessels": {
             "pageInfo": {
-              "endCursor": "payload.data.vessels.pageInfo.endCursor",
-              "hasNextPage": "payload.data.vessels.pageInfo.hasNextPage"
+              "hasNextPage": "paging.hasNextPage",
+              "endCursor": "paging.endCursor"
             },
             "nodes": {
               "*": {
-                "id": "payload.data.vessels.nodes[&1].id",
+                "id": "data[&1].id",
                 "staticData": {
-                  "name": "payload.data.vessels.nodes[&1].staticData.name",
-                  "mmsi": "payload.data.vessels.nodes[&1].staticData.mmsi",
-                  "imo": "payload.data.vessels.nodes[&1].staticData.imo",
-                  "callsign": "payload.data.vessels.nodes[&1].staticData.callsign",
-                  "shipType": "payload.data.vessels.nodes[&1].staticData.shipType",
-                  "aisClass": "payload.data.vessels.nodes[&1].staticData.aisClass",
-                  "flag": "payload.data.vessels.nodes[&1].staticData.flag",
+                  "name": "data[&2].name",
+                  "mmsi": "data[&2].mmsi",
+                  "imo": "data[&2].staticData.imo",
+                  "callsign": "data[&2].staticData.callsign",
+                  "shipType": "data[&2].staticData.shipType",
+                  "aisClass": "data[&2].staticData.aisClass",
+                  "flag": "data[&2].staticData.flag",
                   "dimensions": {
-                    "length": "payload.data.vessels.nodes[&1].staticData.dimensions.length",
-                    "width": "payload.data.vessels.nodes[&1].staticData.dimensions.width"
+                    "length": "data[&3].staticData.dimensions.length",
+                    "width": "data[&3].staticData.dimensions.width"
                   },
-                  "updateTimestamp": "payload.data.vessels.nodes[&1].staticData.updateTimestamp"
+                  "updateTimestamp": "data[&2].staticData.updateTimestamp"
                 },
                 "lastPositionUpdate": {
-                  "accuracy": "payload.data.vessels.nodes[&1].lastPositionUpdate.accuracy",
-                  "collectionType": "payload.data.vessels.nodes[&1].lastPositionUpdate.collectionType",
-                  "course": "payload.data.vessels.nodes[&1].lastPositionUpdate.course",
-                  "heading": "payload.data.vessels.nodes[&1].lastPositionUpdate.heading",
-                  "latitude": "payload.data.vessels.nodes[&1].lastPositionUpdate.latitude",
-                  "longitude": "payload.data.vessels.nodes[&1].lastPositionUpdate.longitude",
-                  "maneuver": "payload.data.vessels.nodes[&1].lastPositionUpdate.maneuver",
-                  "navigationalStatus": "payload.data.vessels.nodes[&1].lastPositionUpdate.navigationalStatus",
-                  "rot": "payload.data.vessels.nodes[&1].lastPositionUpdate.rot",
-                  "speed": "payload.data.vessels.nodes[&1].lastPositionUpdate.speed",
-                  "timestamp": "payload.data.vessels.nodes[&1].lastPositionUpdate.timestamp",
-                  "updateTimestamp": "payload.data.vessels.nodes[&1].lastPositionUpdate.updateTimestamp"
+                  "collectionType": "data[&2].lastPositionUpdate.collectionType",
+                  "course": "data[&2].lastPositionUpdate.course",
+                  "heading": "data[&2].lastPositionUpdate.heading",
+                  "longitude": "data[&2].lastPositionUpdate.longitude",
+                  "latitude": "data[&2].lastPositionUpdate.latitude",
+                  "navigationalStatus": "data[&2].lastPositionUpdate.navigationalStatus",
+                  "rot": "data[&2].lastPositionUpdate.rot",
+                  "speed": "data[&2].lastPositionUpdate.speed",
+                  "timestamp": "data[&2].lastPositionUpdate.timestamp",
+                  "updateTimestamp": "data[&2].lastPositionUpdate.updateTimestamp"
                 },
                 "currentVoyage": {
-                  "destination": "payload.data.vessels.nodes[&1].currentVoyage.destination",
-                  "draught": "payload.data.vessels.nodes[&1].currentVoyage.draught",
-                  "eta": "payload.data.vessels.nodes[&1].currentVoyage.eta",
-                  "timestamp": "payload.data.vessels.nodes[&1].currentVoyage.timestamp",
-                  "updateTimestamp": "payload.data.vessels.nodes[&1].currentVoyage.updateTimestamp"
+                  "destination": "data[&2].currentVoyage.destination",
+                  "draught": "data[&2].currentVoyage.draught",
+                  "eta": "data[&2].currentVoyage.eta",
+                  "matchedPort": {
+                    "port": {
+                      "name": "data[&2].currentVoyage.matchedPort.port.name",
+                      "unlocode": "data[&2].currentVoyage.matchedPort.port.unlocode"
+                    }
+                  }
                 }
               }
             }
           }
         }
       }
+    }
+  },
+  {
+    "operation": "shift",
+    "spec": {
+      "@": "[]"
     }
   }
 ]
